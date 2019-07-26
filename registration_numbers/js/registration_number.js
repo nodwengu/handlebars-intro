@@ -33,7 +33,6 @@ function storeRegistration() {
    
 
    if(localStorage.getItem('registrationNumbers')) {
-//alert(registrationNumberInstance.checkRegNumber(data));
       if( registrationNumberInstance.checkRegNumber(data) ) {
          return false;
       } else {
