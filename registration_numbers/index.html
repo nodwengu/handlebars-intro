@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Numbers</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/registration_number.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+</head>
+<body>
+   <header>
+
+      <script class="registrationTemplate" type="text/x-handlebars-template">
+         {{#each registrations}}
+            <div>{{registration}}</div>
+         {{/each}}
+
+         {{#if regFromCapeTown}}
+            {{#each regFromCapeTown}}
+                <div>{{registration}}</div>
+            {{/each}}
+         {{/if}}
+        
+         {{#if regFromPaarl}}
+            {{#each regFromPaarl}}
+                <div>{{registration}}</div>
+            {{/each}}
+         {{/if}}
+
+         {{#if regFromBellville}}
+            {{#each regFromBellville}}
+                <div>{{registration}}</div>
+            {{/each}}
+         {{/if}}
+
+         {{#if regFromStellenbosch}}
+            {{#each regFromStellenbosch}}
+                <div>{{registration}}</div>
+            {{/each}}
+         {{/if}}
+      </script>
+
+   </header>
+   <div class="container">
+      <div class="row">
+            <div class="col-sm-6">
+               <div class="">
+                  <h2>Add New Registration</h2>
+               </div>
+                <div>
+                    <label for="regNo">Registration Number:</label>
+                    <input type="text" id="regNoInput" class="class form-control" value="">
+                </div>
+                <div class="error w3-center w3-animate-fading">
+                    
+                </div>
+                <div class="regButton">
+                    <div class="btn btn-success" id="addRegNumber">Add</div>
+                </div>
+
+                <hr style="border: dashed 1px gray;">
+
+                <div class="filter-heading">
+                    <h2>Filter By City/Town</h2>
+                </div>
+
+                <div style="">
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="all">All</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="cape town">Cape Town</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="paarl">Paarl</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="bellville">Bellvile</label>
+                    <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="stellenbosch">Stellenbosch</label>
+                </div>
+
+                <div class="regButton">
+                    <div class="btn btn-success" id="showFilter">Show</div>
+                </div>
+
+                <div class="regNumList">
+                    <!-- <span>CA 12084</span> -->
+                </div>
+    
+            </div>
+            <div class="col-sm-6" style="background: #F5DEB3;">
+               <div class="">
+                   <h2>Add New Registration</h2>
+               </div>
+               <div>
+                   <label for="regNo">Registration Number:</label>
+                   <input type="text" id="regInput" class="class form-control" value="">
+               </div>
+               <div class="error errorMsg w3-center w3-animate-fading">
+                   
+               </div>
+               <div class="regButton">
+                   <div class="btn btn-success" id="addNumber">Add</div>
+               </div>
+
+               <hr style="border: dashed 1px gray;">
+
+               <div class="filter-heading">
+                   <h2>Filter By City/Town</h2>
+               </div>
+
+               <div style="">
+                   <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="all">All</label>
+                   <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="cape town">Cape Town</label>
+                   <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="paarl">Paarl</label>
+                   <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="bellville">Bellvile</label>
+                   <label class="radio-inline"><input type="radio" name="registrationRadio" class="regNumberRadio" value="stellenbosch">Stellenbosch</label>
+               </div>
+
+               <div class="regButton">
+                   <div class="btn btn-success" id="registrationFilter">Show</div>
+               </div>
+
+               <div id="registrationNumbers">
+                   <!-- <span>CA 12084</span> -->
+               </div>
+   
+           </div>
+   
+        </div>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/registrationNumber.js"></script>
+    
+    <script src="js/registration_number.js"></script>
+
+    <script src="js/registration-template.js"></script>
+</body>
+</html>
